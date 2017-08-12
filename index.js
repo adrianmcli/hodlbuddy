@@ -9,8 +9,8 @@ const getCurrentPrice = async (id) => {
 const myHoldings = {
   ethereum: 10,
   neo: 377,
-  "golem-network-tokens": 632.9,
-  augur: 61,
+  augur: 31,
+  metaverse: 201,
 }
 
 const displayHoldings = async (holdings) => {
@@ -19,11 +19,12 @@ const displayHoldings = async (holdings) => {
     const currency = prop
     const amount = holdings[prop]
     const price = await getCurrentPrice(currency)
-    console.log(currency, price, amount, price * amount)
+    const value = price * amount
+    console.log(`${currency} (${amount}) | $${parseFloat(price).toFixed(2)} | $${value.toFixed(2)}`)
     total += price * amount
   }
   console.log('====')
-  console.log(`Total portfolio in USD: ${total}`)
+  console.log(`Total portfolio in USD: $${total.toFixed(2)}`)
 }
 
 displayHoldings(myHoldings)
