@@ -16,8 +16,8 @@ const myHoldings = {
 }
 
 const displayHoldings = async (holdings) => {
-  console.log('Currency (Amount) | Price | Book Value')
-  console.log('--------------------------------------')
+  console.log('Currency (Amount) | Price | Mkt Value')
+  console.log('-------------------------------------')
   let total = 0
   for (var prop in holdings) {
     const currency = prop
@@ -28,7 +28,7 @@ const displayHoldings = async (holdings) => {
     total += price * amount
   }
   console.log('====')
-  console.log(`Total portfolio in USD: $${total.toFixed(2)}`)
+  console.log(`Total value in USD: $${total.toFixed(2)}`)
 }
 
 displayHoldings(myHoldings)
