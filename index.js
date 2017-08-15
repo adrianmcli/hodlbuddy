@@ -7,13 +7,17 @@ const getCurrentPrice = async (id) => {
 }
 
 const myHoldings = {
-  ethereum: 10,
+  ethereum: 2.9,
   neo: 377,
   augur: 31,
   metaverse: 201,
+  civic: 1111,
+  zencash: 456,
 }
 
 const displayHoldings = async (holdings) => {
+  console.log('Currency (Amount) | Price | Book Value')
+  console.log('--------------------------------------')
   let total = 0
   for (var prop in holdings) {
     const currency = prop
